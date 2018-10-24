@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Infraestructure\" />
+    <Folder Include="Infraestructure\Filters\" />
+    <Folder Include="Infraestructure\Helpers\" />
   </ItemGroup>
 
   <ItemGroup>

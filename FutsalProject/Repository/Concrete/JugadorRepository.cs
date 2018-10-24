@@ -30,7 +30,7 @@ namespace DataRepository.Concrete
         {
             throw new NotImplementedException();
         }
-        
+         
         public bool Update(Jugador jugador)
         {
             throw new NotImplementedException();
