@@ -40,5 +40,24 @@ namespace Core.Concrete
 
             return jugador;
         }
+
+        public bool Add(JugadorEntity jugador)
+        {
+            return _repository.Add(new Jugador
+            {
+                Id = jugador.Id,
+                Dni = jugador.Dni,
+                Nombres = jugador.Nombres,
+                Apellidos = jugador.Apellidos,
+                FechaNacimiento = jugador.FechaNacimiento,
+                Direccion = jugador.Direccion,
+                Telefono = jugador.Telefono,
+                TelefonoEmergencia = jugador.TelefonoEmergencia,
+                FotoUrl = jugador.FotoUrl,
+                IdPieHabil = jugador.IdPieHabil,
+                FechaAfiliacion = jugador.FechaAfiliacion,
+                Borrado = jugador.Borrado
+            });
+        }
     }
 }

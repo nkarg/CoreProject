@@ -5,26 +5,26 @@ using System.Text;
 
 namespace Core.Abstract
 {
-    public interface IJugadorManager
+    public interface ITorneoManager
     {
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        List<JugadorEntity> GetAll();
+        List<TorneoEntity> GetAll();
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        JugadorEntity GetById(int id);
+        TorneoEntity GetById(int id);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="jugador"></param>
+        /// <param name="Torneo"></param>
         /// <returns></returns>
-        bool Add(JugadorEntity jugador);
+        bool Add(TorneoEntity torneo);
     }
 }

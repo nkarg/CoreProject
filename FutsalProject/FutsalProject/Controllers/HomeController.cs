@@ -5,13 +5,35 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FutsalProject.Models;
+using Core.Abstract;
+using Core.Entities;
 
 namespace FutsalProject.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IJugadorManager _jugadorManager;
+
+        public HomeController(IJugadorManager jugadorManager)
+        {
+            _jugadorManager = jugadorManager;
+        }
+
         public IActionResult Index()
         {
+            _jugadorManager.Add(new JugadorEntity
+            {
+                Dni = 34973249,
+                Nombres = "",
+                Apellidos = "",
+                FechaNacimiento = "",
+                Direccion = "",
+                Telefono = "",
+                TelefonoEmergencia = "",
+                IdPieHabil = 1,
+                FechaAfiliacion = "",
+                Borrado = true
+            });
             return View();
         }
 

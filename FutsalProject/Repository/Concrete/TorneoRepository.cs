@@ -7,46 +7,31 @@ using System.Text;
 
 namespace DataRepository.Concrete
 {
-    public class JugadorRepository : IJugadorRepository
+    public class TorneoRepository : ITorneoRepository
     {
         private readonly DataFutsalContext _context;
 
-        public JugadorRepository(DataFutsalContext context)
+        public TorneoRepository(DataFutsalContext context)
         {
             _context = context;
         }
-        
-        public Jugador GetByKey(int id)
+
+        public Torneo GetByKey(int id)
         {
-            return _context.Jugador.Where(x => x.Id.Equals(id)).FirstOrDefault();
+            return _context.Torneo.Where(x => x.Id.Equals(id)).FirstOrDefault();
         }
 
-        public List<Jugador> GetAll()
+        public List<Torneo> GetAll()
         {
-            return _context.Jugador.ToList();
+            return _context.Torneo.ToList();
         }
 
-        public bool Add(Jugador jugador)
+        public bool Add(Torneo torneo)
         {
             var result = true;
             try
             {
-                var test = _context.Jugador.Add(jugador);
-            }
-            catch (Exception ex)
-            {
-                result = false;
-            }
-
-            return result;
-        }
-        
-        public bool Update(Jugador jugador)
-        {
-            var result = true;
-            try
-            {
-                _context.Jugador.Update(jugador);
+                var test = _context.Torneo.Add(torneo);
             }
             catch (Exception ex)
             {
@@ -56,12 +41,27 @@ namespace DataRepository.Concrete
             return result;
         }
 
-        public bool Delete(Jugador jugador)
+        public bool Update(Torneo torneo)
         {
             var result = true;
             try
             {
-                _context.Jugador.Remove(jugador);
+                _context.Torneo.Update(torneo);
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        public bool Delete(Torneo torneo)
+        {
+            var result = true;
+            try
+            {
+                _context.Torneo.Remove(torneo);
             }
             catch (Exception ex)
             {
