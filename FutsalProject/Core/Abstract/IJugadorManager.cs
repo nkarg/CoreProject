@@ -41,6 +41,6 @@ namespace Core.Abstract
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        ResultEntity Delete(JugadorEntity jugador);
+        ResultEntity Delete(int id);
     }
 }
