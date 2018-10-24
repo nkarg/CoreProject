@@ -103,7 +103,7 @@ namespace Core.Concrete
                 Borrado = jugador.Borrado
             };
 
-            _repository.ed(jg);
+            result.ResultOk = _repository.Update(jg);
 
             return result;
         }
