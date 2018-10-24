@@ -13,6 +13,10 @@ using FutsalProject.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Data;
+using DataRepository.Abstract;
+using DataRepository.Concrete;
+using Core.Abstract;
+using Core.Concrete;
 
 namespace FutsalProject
 {
@@ -74,6 +78,8 @@ namespace FutsalProject
 
             //Services configuration
             services.AddDbContext<DataFutsalContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IJugadorRepository, JugadorRepository>();
+            services.AddTransient<IJugadorManager, JugadorManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
