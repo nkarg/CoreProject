@@ -1,4 +1,5 @@
 ﻿using Data;
+using DataRepository.Infraestructure.Custom;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,20 +26,20 @@ namespace DataRepository.Abstract
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        bool Add(Jugador jugador);
+        RepositoryResult Add(Jugador jugador);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        bool Update(Jugador jugador);
+        RepositoryResult Update(Jugador jugador);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        bool Delete(Jugador jugador);
+        RepositoryResult Delete(Jugador jugador);
     }
 }

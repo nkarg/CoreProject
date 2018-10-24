@@ -80,7 +80,11 @@ namespace Core.Concrete
                 Borrado = jugador.Borrado
             };
 
-            _repository.Add(jg);
+            var repResult = _repository.Add(jg);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
 
             return result;
         }
@@ -103,28 +107,27 @@ namespace Core.Concrete
                 Borrado = jugador.Borrado
             };
 
-            _repository.ed(jg);
+            var repResult = _repository.Update(jg);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
+
 
             return result;
         }
 
-        public ResultEntity Delete(JugadorEntity jugador)
+        public ResultEntity Delete(int id)
         {
             var result = new ResultEntity();
 
-            var jg = new Jugador
-            {
-                Dni = jugador.Dni,
-                Nombres = jugador.Nombres,
-                Apellidos = jugador.Apellidos,
-                Direccion = jugador.Direccion,
-                Telefono = jugador.Telefono,
-                TelefonoEmergencia = jugador.TelefonoEmergencia,
-                FotoUrl = jugador.FotoUrl,
-                IdPieHabil = jugador.IdPieHabil,
-                FechaAfiliacion = jugador.FechaAfiliacion,
-                Borrado = jugador.Borrado
-            };
+            var jg = _repository.GetByKey(id);
+
+            var repResult = _repository.Delete(jg);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
 
             return result;
         }
