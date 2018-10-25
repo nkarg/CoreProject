@@ -56,5 +56,47 @@ namespace Core.Concrete
                 Borrado = torneo.Borrado
             });
         }
+
+        public bool Delete(TorneoEntity torneo)
+        {
+            var result = false;
+
+            var tn = new Torneo
+            {
+                 Id = torneo.Id,
+                 Nombre = torneo.Nombre,
+                 IdPrimeraRonda = torneo.IdPrimeraRonda,
+                 IdSegundaRonda = torneo.IdSegundaRonda,
+                 IdTerceraRonda = torneo.IdTerceraRonda,
+                 TiempoDeJuego = torneo.TiempoDeJuego,
+                 FechaCreacion = torneo.FechaCreacion,
+                 Borrado = torneo.Borrado
+            };
+
+            _repository.Delete(tn);
+
+            return result;
+        }
+
+        public bool Update(TorneoEntity torneo)
+        {
+            var result = false;
+
+            var tn = new Torneo
+            {
+                Id = torneo.Id,
+                Nombre = torneo.Nombre,
+                IdPrimeraRonda = torneo.IdPrimeraRonda,
+                IdSegundaRonda = torneo.IdSegundaRonda,
+                IdTerceraRonda = torneo.IdTerceraRonda,
+                TiempoDeJuego = torneo.TiempoDeJuego,
+                FechaCreacion = torneo.FechaCreacion,
+                Borrado = torneo.Borrado
+            };
+
+           _repository.Update(tn);
+
+            return result;
+        }
     }
 }
