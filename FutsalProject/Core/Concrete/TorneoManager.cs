@@ -1,5 +1,6 @@
 ﻿using Core.Abstract;
 using Core.Entities;
+using Core.Infraestructure.Custom;
 using Data;
 using DataRepository.Abstract;
 using System;
@@ -23,8 +24,15 @@ namespace Core.Concrete
             var query = (from tn in _repository.GetAll()
                          select new TorneoEntity
                          {
-                             Id = tn.Id
-                         }).ToList();
+                              Id = tn.Id,
+                              Nombre = tn.Nombre,
+                              IdPrimeraRonda = tn.IdPrimeraRonda,
+                              IdSegundaRonda = tn.IdSegundaRonda,
+                              IdTerceraRonda = tn.IdTerceraRonda,
+                              TiempoDeJuego = tn.TiempoDeJuego,
+                              FechaCreacion = tn.FechaCreacion,
+                              Borrado = tn.Borrado
+                        }).ToList();
 
             return query;
         }
@@ -35,16 +43,28 @@ namespace Core.Concrete
             var obj = _repository.GetByKey(id);
             if (obj != null)
             {
-                torneo.Id = obj.Id;
+                torneo = new TorneoEntity
+                {
+                    Id = torneo.Id,
+                    Nombre = torneo.Nombre,
+                    IdPrimeraRonda = torneo.IdPrimeraRonda,
+                    IdSegundaRonda = torneo.IdSegundaRonda,
+                    IdTerceraRonda = torneo.IdTerceraRonda,
+                    TiempoDeJuego = torneo.TiempoDeJuego,
+                    FechaCreacion = torneo.FechaCreacion,
+                    Borrado = torneo.Borrado
+                };
             }
 
             return torneo;
         }
 
 
-        public bool Add(TorneoEntity torneo)
+        public ResultEntity Add(TorneoEntity torneo)
         {
-            return _repository.Add(new Torneo
+            var result = new ResultEntity();
+
+            var tn = new Torneo
             {
                 Id = torneo.Id,
                 Nombre = torneo.Nombre,
@@ -54,33 +74,20 @@ namespace Core.Concrete
                 TiempoDeJuego = torneo.TiempoDeJuego,
                 FechaCreacion = torneo.FechaCreacion,
                 Borrado = torneo.Borrado
-            });
-        }
-
-        public bool Delete(TorneoEntity torneo)
-        {
-            var result = false;
-
-            var tn = new Torneo
-            {
-                 Id = torneo.Id,
-                 Nombre = torneo.Nombre,
-                 IdPrimeraRonda = torneo.IdPrimeraRonda,
-                 IdSegundaRonda = torneo.IdSegundaRonda,
-                 IdTerceraRonda = torneo.IdTerceraRonda,
-                 TiempoDeJuego = torneo.TiempoDeJuego,
-                 FechaCreacion = torneo.FechaCreacion,
-                 Borrado = torneo.Borrado
             };
 
-            _repository.Delete(tn);
+            var repResult = _repository.Add(tn);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Torneo añadido con exito." : "Error al añadir un nuevo Torneo.";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
 
             return result;
         }
 
-        public bool Update(TorneoEntity torneo)
+        public ResultEntity Update(TorneoEntity torneo)
         {
-            var result = false;
+            var result = new ResultEntity();
 
             var tn = new Torneo
             {
@@ -94,7 +101,26 @@ namespace Core.Concrete
                 Borrado = torneo.Borrado
             };
 
-           _repository.Update(tn);
+            var repResult = _repository.Update(tn);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Torneo añadido con exito." : "Error al añadir un nuevo Torneo.";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
+
+            return result;
+        }
+
+        public ResultEntity Delete(int id)
+        {
+            var result = new ResultEntity();
+
+            var tn = _repository.GetByKey(id);
+
+            var repResult = _repository.Delete(tn);
+            result.ResultOk = repResult.ActionResult;
+            result.Message = repResult.ActionResult ? "Torneo eliminado con exito." : $"Error al eliminar el Torneo ID: {tn.Id} - {tn.Nombre}.";
+            result.ErrorCode = repResult.ActionResult ? 200 : 500;
+            result.ErrorDescription = repResult.Error?.Message;
 
             return result;
         }

@@ -1,5 +1,6 @@
 ﻿using Data;
 using DataRepository.Abstract;
+using DataRepository.Infraestructure.Custom;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,46 +27,52 @@ namespace DataRepository.Concrete
             return _context.Torneo.ToList();
         }
 
-        public bool Add(Torneo torneo)
+        public RepositoryResult Add(Torneo torneo)
         {
-            var result = true;
+            var result = new RepositoryResult(true);
             try
             {
                 var test = _context.Torneo.Add(torneo);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                result = false;
+                result.ActionResult = false;
+                result.Error = ex;
             }
 
             return result;
         }
 
-        public bool Update(Torneo torneo)
+        public RepositoryResult Update(Torneo torneo)
         {
-            var result = true;
+            var result = new RepositoryResult(true);
             try
             {
                 _context.Torneo.Update(torneo);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                result = false;
+                result.ActionResult = false;
+                result.Error = ex;
             }
 
             return result;
         }
 
-        public bool Delete(Torneo torneo)
+        public RepositoryResult Delete(Torneo torneo)
         {
-            var result = true;
+            var result = new RepositoryResult(true);
             try
             {
                 _context.Torneo.Remove(torneo);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                result = false;
+                result.ActionResult = false;
+                result.Error = ex;
             }
 
             return result;
