@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutsalProject", "FutsalProject\FutsalProject.csproj", "{59AFF62D-1BC6-4279-9AD6-E6AE5670E434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutsalProject", "FutsalProject\FutsalProject.csproj", "{59AFF62D-1BC6-4279-9AD6-E6AE5670E434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRun", "ConsoleRun\ConsoleRun.csproj", "{54E06920-0BA0-4484-81ED-A19DF0F3F4F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleRun", "ConsoleRun\ConsoleRun.csproj", "{54E06920-0BA0-4484-81ED-A19DF0F3F4F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{E9FE69C6-1065-42A1-A0E1-291341052CB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{E9FE69C6-1065-42A1-A0E1-291341052CB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CE586250-EAFF-4C54-A33F-47F3519FD950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{CE586250-EAFF-4C54-A33F-47F3519FD950}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "Repository\DataRepository.csproj", "{1DBDCE01-9D2D-4B77-845B-BBEC79CA57B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "Repository\DataRepository.csproj", "{1DBDCE01-9D2D-4B77-845B-BBEC79CA57B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{6AD812B7-B19F-4ADE-9474-2EFD2CC04CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{6AD812B7-B19F-4ADE-9474-2EFD2CC04CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDapper", "DataDapper\DataDapper.csproj", "{8A95F66E-D005-4CB3-AE80-D548A49C3571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDapper", "DataDapper\DataDapper.csproj", "{8A95F66E-D005-4CB3-AE80-D548A49C3571}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnderTesting", "UnderTesting", "{D92E1C19-537B-43FF-AD50-78CFA3202AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTesting", "ApplicationTesting\ApplicationTesting.csproj", "{412F4461-9C87-4A07-8EF5-1A03B3E8365F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationTesting", "ApplicationTesting\ApplicationTesting.csproj", "{412F4461-9C87-4A07-8EF5-1A03B3E8365F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTesting", "ProjectTesting\ProjectTesting.csproj", "{271A2746-6A6A-4A3D-B45F-8839B70818B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTesting", "ProjectTesting\ProjectTesting.csproj", "{271A2746-6A6A-4A3D-B45F-8839B70818B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

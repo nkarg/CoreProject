@@ -1,0 +1,90 @@
+﻿@model FutsalProject.Models.JugadorViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JugadorViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dni)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dni)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoEmergencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoEmergencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FotoUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPieHabil)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPieHabil)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAfiliacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaAfiliacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Borrado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Borrado)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a asp-action="GetAll">Back to List</a>
+</div>

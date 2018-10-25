@@ -33,6 +33,7 @@ namespace DataRepository.Concrete
             try
             {
                 var test = _context.Jugador.Add(jugador);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -49,6 +50,7 @@ namespace DataRepository.Concrete
             try
             {
                 _context.Jugador.Update(jugador);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -65,6 +67,7 @@ namespace DataRepository.Concrete
             try
             {
                 _context.Jugador.Remove(jugador);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

@@ -34,6 +34,7 @@ namespace Core.Concrete
                              FotoUrl = jg.FotoUrl,
                              IdPieHabil = jg.IdPieHabil,
                              FechaAfiliacion = jg.FechaAfiliacion,
+                             FechaNacimiento = jg.FechaNacimiento,
                              Borrado = jg.Borrado
                          }).ToList();
 
@@ -46,17 +47,21 @@ namespace Core.Concrete
             var obj = _repository.GetByKey(id);
             if (obj != null)
             {
-                jugador.Id = obj.Id;
-                jugador.Dni = obj.Dni;
-                jugador.Nombres = obj.Nombres;
-                jugador.Apellidos = obj.Apellidos;
-                jugador.Direccion = obj.Direccion;
-                jugador.Telefono = obj.Telefono;
-                jugador.TelefonoEmergencia = obj.TelefonoEmergencia;
-                jugador.FotoUrl = obj.FotoUrl;
-                jugador.IdPieHabil = obj.IdPieHabil;
-                jugador.FechaAfiliacion = obj.FechaAfiliacion;
-                jugador.Borrado = obj.Borrado;
+                jugador = new JugadorEntity
+                {
+                    Id = obj.Id,
+                    Dni = obj.Dni,
+                    Nombres = obj.Nombres,
+                    Apellidos = obj.Apellidos,
+                    Direccion = obj.Direccion,
+                    Telefono = obj.Telefono,
+                    TelefonoEmergencia = obj.TelefonoEmergencia,
+                    FotoUrl = obj.FotoUrl,
+                    IdPieHabil = obj.IdPieHabil,
+                    FechaAfiliacion = obj.FechaAfiliacion,
+                    FechaNacimiento = obj.FechaNacimiento,
+                    Borrado = obj.Borrado
+                };
             }
 
             return jugador;
@@ -77,12 +82,13 @@ namespace Core.Concrete
                 FotoUrl = jugador.FotoUrl,
                 IdPieHabil = jugador.IdPieHabil,
                 FechaAfiliacion = jugador.FechaAfiliacion,
+                FechaNacimiento = jugador.FechaNacimiento,
                 Borrado = jugador.Borrado
             };
 
             var repResult = _repository.Add(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador";
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 
@@ -95,6 +101,7 @@ namespace Core.Concrete
 
             var jg = new Jugador
             {
+                Id = jugador.Id,
                 Dni = jugador.Dni,
                 Nombres = jugador.Nombres,
                 Apellidos = jugador.Apellidos,
@@ -104,15 +111,15 @@ namespace Core.Concrete
                 FotoUrl = jugador.FotoUrl,
                 IdPieHabil = jugador.IdPieHabil,
                 FechaAfiliacion = jugador.FechaAfiliacion,
+                FechaNacimiento = jugador.FechaNacimiento,
                 Borrado = jugador.Borrado
             };
 
             var repResult = _repository.Update(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador";
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
-
 
             return result;
         }
@@ -125,7 +132,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Delete(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}";
+            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 
