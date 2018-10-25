@@ -21,19 +21,19 @@ namespace FutsalProject.Controllers
 
         public IActionResult Index()
         {
-            _jugadorManager.Add(new JugadorEntity
-            {
-                Dni = 34973249,
-                Nombres = "",
-                Apellidos = "",
-                FechaNacimiento = "",
-                Direccion = "",
-                Telefono = "",
-                TelefonoEmergencia = "",
-                IdPieHabil = 1,
-                FechaAfiliacion = "",
-                Borrado = true
-            });
+            //_jugadorManager.Add(new JugadorEntity
+            //{
+            //    Dni = 34973249,
+            //    Nombres = "",
+            //    Apellidos = "",
+            //    FechaNacimiento = "",
+            //    Direccion = "",
+            //    Telefono = "",
+            //    TelefonoEmergencia = "",
+            //    IdPieHabil = 1,
+            //    FechaAfiliacion = "",
+            //    Borrado = true
+            //});
             return View();
         }
 
