@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnderTesting", "UnderTestin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin", "Admin\Admin.csproj", "{F9777AD7-31B3-4749-B98B-0CA4D9D653CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnit-Core", "xUnit-Core\xUnit-Core.csproj", "{05EA243B-E01A-4CA3-A3D2-546B47423F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnit-Core", "xUnit-Core\xUnit-Core.csproj", "{05EA243B-E01A-4CA3-A3D2-546B47423F91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

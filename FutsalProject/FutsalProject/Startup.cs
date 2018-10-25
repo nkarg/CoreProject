@@ -17,6 +17,10 @@ using DataRepository.Abstract;
 using DataRepository.Concrete;
 using Core.Abstract;
 using Core.Concrete;
+using FutsalProject.Infraestructure.Extensions;
+using System.Web;
+using FutsalProject.Infraestructure.Helpers;
+using FutsalProject.Infraestructure.Filters;
 
 namespace FutsalProject
 {
@@ -78,6 +82,7 @@ namespace FutsalProject
 
             //Services configuration
             services.AddDbContext<DataFutsalContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<IEmail, EmailManager>();
             services.AddTransient<IJugadorRepository, JugadorRepository>();
             services.AddTransient<IJugadorManager, JugadorManager>();
             services.AddTransient<IEquipoRepository, EquipoRepository>();
@@ -95,15 +100,16 @@ namespace FutsalProject
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                app.UseMiddleware<CustomExceptionHandlerMiddleware>();
             }
 
+            app.UseSecurityHeaders();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseStaticHttpContext();
+            app.UseSession();
             app.UseAuthentication();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
