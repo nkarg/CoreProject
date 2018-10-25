@@ -11,28 +11,28 @@ namespace CoreDapper.Abstract
         /// Get all players
         /// </summary>
         /// <returns></returns>
-        List<JugadorEntity> GetAll();
+        List<JugadorDapper> GetAll();
 
         /// <summary>
         /// Get one player by ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        JugadorEntity GetById(int id);
+        JugadorDapper GetById(int id);
 
         /// <summary>
         /// Add a new player
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        string Add(JugadorEntity jugador);
+        string Add(JugadorDapper jugador);
 
         /// <summary>
         /// Modify information of player
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        string Update(JugadorEntity jugador);
+        string Update(JugadorDapper jugador);
 
 
         /// <summary>

@@ -46,6 +46,7 @@ namespace Api
                 swagger.IncludeXmlComments(xmlPath);
             });
 
+            services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //Services configuration
             services.AddDbContext<DataFutsalContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

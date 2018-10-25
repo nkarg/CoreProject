@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Core.Abstract;
 using Core.Entities;
 using FutsalProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace FutsalProject.Controllers
 {
+    [Authorize]
     public class EquipoController : Controller
     {
         private readonly IEquipoManager _equipoManager;

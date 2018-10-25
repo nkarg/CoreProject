@@ -11,28 +11,28 @@ namespace CoreDapper.Abstract
         /// Get all teams
         /// </summary>
         /// <returns></returns>
-        List<EquipoEntity> GetAll();
+        List<EquipoDapper> GetAll();
 
         /// <summary>
         /// Get one team by ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        EquipoEntity GetById(int id);
+        EquipoDapper GetById(int id);
 
         /// <summary>
         /// Add a new team
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        string Add(EquipoEntity jugador);
+        string Add(EquipoDapper jugador);
 
         /// <summary>
         /// Modify information of one specific team
         /// </summary>
         /// <param name="jugador"></param>
         /// <returns></returns>
-        string Update(EquipoEntity jugador);
+        string Update(EquipoDapper jugador);
 
         /// <summary>
         /// Delete one specific team

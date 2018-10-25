@@ -10,13 +10,13 @@ namespace ConsoleRun
         {
             var equipoManager = new EquipoManager();
             var jugadorManager = new JugadorManager();
-
+            
             Console.WriteLine("Bienvenido a la prueba de Dapper!");
             Console.WriteLine("*********************************" + Environment.NewLine);
             Console.WriteLine("Añadiendo un EQUIPO");
             Console.WriteLine("Datos:");
 
-            var equipo = new EquipoEntity
+            var equipo = new EquipoDapper
             {
                 NombreLargo = "Submarino Footballl Club",
                 NombreCorto = "Submarino",
@@ -56,7 +56,7 @@ namespace ConsoleRun
             Console.WriteLine("Añadiendo un Jugador");
             Console.WriteLine("Datos:");
 
-            var jugador = new JugadorEntity
+            var jugador = new JugadorDapper
             {
                 Dni = 34973249,
                 Nombres = "Eduardo Alejandro",

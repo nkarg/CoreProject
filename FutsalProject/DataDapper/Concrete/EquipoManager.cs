@@ -19,16 +19,16 @@ namespace CoreDapper.Concrete
             _connectionString = "Server=ARGDST0004;Database=DataFutsal;Trusted_Connection=True;";
         }
 
-        public List<EquipoEntity> GetAll()
+        public List<EquipoDapper> GetAll()
         {
-            var result = new List<EquipoEntity>();
+            var result = new List<EquipoDapper>();
             var script = "SELECT * FROM [DataFutsal].[dbo].[Equipo]";
 
             try
             {
                 using (SqlConnection sqlConnection = _sqlConnection)
                 {
-                    var query = SqlMapper.Query<EquipoEntity>(_sqlConnection, script).ToList();
+                    var query = SqlMapper.Query<EquipoDapper>(_sqlConnection, script).ToList();
 
                     if (query != null)
                     {
@@ -45,9 +45,9 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public EquipoEntity GetById(int id)
+        public EquipoDapper GetById(int id)
         {
-            EquipoEntity result = null;
+            EquipoDapper result = null;
             var script = "SELECT * FROM [DataFutsal].[dbo].[Equipo] WHERE [Id] = @EquipoId";
             var param = new DynamicParameters();
             param.Add("@EquipoId", id);
@@ -56,7 +56,7 @@ namespace CoreDapper.Concrete
             {
                 using (SqlConnection sqlConnection = _sqlConnection)
                 {
-                    var query = SqlMapper.Query<EquipoEntity>(_sqlConnection, script, param).FirstOrDefault();
+                    var query = SqlMapper.Query<EquipoDapper>(_sqlConnection, script, param).FirstOrDefault();
 
                     if (query != null)
                     {
@@ -72,7 +72,7 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public string Add(EquipoEntity equipo)
+        public string Add(EquipoDapper equipo)
         {
             var result = string.Empty;
             var script = "INSERT INTO [dbo].[Equipo]([NombreLargo],[NombreCorto],[EscudoUrl],[FechaAfiliacion],[Borrado]) VALUES (@NombreLargo,@NombreCorto,@EscudoUrl,@FechaAfiliacion,@Borrado)";
@@ -101,7 +101,7 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public string Update(EquipoEntity equipo)
+        public string Update(EquipoDapper equipo)
         {
             var result = string.Empty;
             var script = "UPDATE [dbo].[Equipo] SET [NombreLargo] = @NombreLargo, [NombreCorto] = @NombreCorto, [EscudoUrl] = @EscudoUrl, [FechaAfiliacion] = @FechaAfiliacion, [Borrado] = @Borrado WHERE [Id] = @EquipoId";

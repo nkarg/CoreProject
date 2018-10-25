@@ -132,7 +132,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Delete(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el Jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}.";
+            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el Jugador ID: {jg.Id}.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 

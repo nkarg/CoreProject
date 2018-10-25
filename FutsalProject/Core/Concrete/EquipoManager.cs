@@ -61,7 +61,6 @@ namespace Core.Concrete
 
             var eq = new Equipo
             {
-                Id = equipo.Id,
                 NombreLargo = equipo.NombreLargo,
                 NombreCorto = equipo.NombreCorto,
                 EscudoUrl = equipo.EscudoUrl,
@@ -109,7 +108,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Delete(eq);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Equipo eliminado con exito." : $"Error al eliminar el Equipo ID: {eq.Id} - {eq.NombreLargo} ({eq.NombreCorto}).";
+            result.Message = repResult.ActionResult ? "Equipo eliminado con exito." : $"Error al eliminar el Equipo ID: {id}).";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 

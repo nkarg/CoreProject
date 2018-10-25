@@ -19,16 +19,16 @@ namespace CoreDapper.Concrete
             _connectionString = "Server=ARGDST0004;Database=DataFutsal;Trusted_Connection=True;";
         }
 
-        public List<JugadorEntity> GetAll()
+        public List<JugadorDapper> GetAll()
         {
-            var result = new List<JugadorEntity>();
+            var result = new List<JugadorDapper>();
             var script = "SELECT * FROM [DataFutsal].[dbo].[Jugador]";
 
             try
             {
                 using (SqlConnection sqlConnection = _sqlConnection)
                 {
-                    var query = SqlMapper.Query<JugadorEntity>(_sqlConnection, script).ToList();
+                    var query = SqlMapper.Query<JugadorDapper>(_sqlConnection, script).ToList();
 
                     if (query != null)
                     {
@@ -45,9 +45,9 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public JugadorEntity GetById(int id)
+        public JugadorDapper GetById(int id)
         {
-            JugadorEntity result = null;
+            JugadorDapper result = null;
             var script = "SELECT * FROM [DataFutsal].[dbo].[Jugador] WHERE [Id] = @JugadorId";
             var param = new DynamicParameters();
 
@@ -58,7 +58,7 @@ namespace CoreDapper.Concrete
             {
                 using (SqlConnection sqlConnection = _sqlConnection)
                 {
-                    var query = SqlMapper.Query<JugadorEntity>(_sqlConnection, script, param).FirstOrDefault();
+                    var query = SqlMapper.Query<JugadorDapper>(_sqlConnection, script, param).FirstOrDefault();
 
                     if (query != null)
                     {
@@ -74,7 +74,7 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public string Add(JugadorEntity jugador)
+        public string Add(JugadorDapper jugador)
         {
             var result = string.Empty;
             var script = "INSERT INTO [dbo].[Jugador]([Dni],[Nombres],[Apellidos],[FechaNacimiento],[Direccion],[Telefono],[TelefonoEmergencia],[FotoUrl],[IdPieHabil],[FechaAfiliacion],[Borrado]) VALUES (@Dni,@Nombres,@Apellidos,@FechaNacimiento,@Direccion,@Telefono,@TelefonoEmergencia,@FotoUrl,@IdPieHabil ,@FechaAfiliacion,@Borrado)";
@@ -109,7 +109,7 @@ namespace CoreDapper.Concrete
             return result;
         }
 
-        public string Update(JugadorEntity jugador)
+        public string Update(JugadorDapper jugador)
         {
 
             var result = string.Empty;
