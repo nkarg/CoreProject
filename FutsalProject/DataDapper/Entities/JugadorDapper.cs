@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoreDapper.Entities
 {
-    public class JugadorEntity
+    public class JugadorDapper
     {
         public int Id { get; set; }
         public long Dni { get; set; }

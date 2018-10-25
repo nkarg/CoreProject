@@ -6,69 +6,66 @@
     <members>
         <member name="M:Api.Controllers.EquipoController.Get">
             <summary>
-            
+            Obtiene todos los equipos en DDBB
             </summary>
             <returns></returns>
         </member>
         <member name="M:Api.Controllers.EquipoController.Get(System.Int32)">
             <summary>
-            
+            Obtiene un equipo mediante su ID
             </summary>
-            <param name="id"></param>
+            <param name="id">ID del equipo</param>
             <returns></returns>
         </member>
-        <member name="M:Api.Controllers.EquipoController.Post(System.String)">
+        <member name="M:Api.Controllers.EquipoController.Post(Core.Entities.EquipoEntity)">
             <summary>
-            
+            Modifica un equipo
             </summary>
-            <param name="value"></param>
+            <param name="model">Modelo de la entidad</param>
         </member>
-        <member name="M:Api.Controllers.EquipoController.Put(System.Int32,System.String)">
+        <member name="M:Api.Controllers.EquipoController.Put(Core.Entities.EquipoEntity)">
             <summary>
-            
+            Añade un equipo
             </summary>
-            <param name="id"></param>
-            <param name="value"></param>
+            <param name="model">Modelo de la entidad</param>
         </member>
         <member name="M:Api.Controllers.EquipoController.Delete(System.Int32)">
             <summary>
-            
+            Elimina un equipo mediante su ID
             </summary>
-            <param name="id"></param>
+            <param name="id">ID del equipo</param>
         </member>
         <member name="M:Api.Controllers.JugadorController.Get">
             <summary>
-            Obtiene un equipo mediante un ID especifico
+            Obtiene todos los jugadores en DDBB
             </summary>
-            <param name="id">Id del Equipo</param>
-            <returns code="200">Un Equipo</returns>
-            <returns code="404">Equipo con ID no encontrado</returns>
+            <returns code="200">Listado de equipos</returns>
         </member>
         <member name="M:Api.Controllers.JugadorController.Get(System.Int32)">
             <summary>
-            
+            Obtiene un jugador mediante su ID
             </summary>
-            <param name="id"></param>
-            <returns></returns>
+            <param name="id">ID del jugador</param>
+            <returns code="200">Un jugador específico</returns>
+            <returns code="404">No se encontro jugador</returns>
         </member>
-        <member name="M:Api.Controllers.JugadorController.Post(System.String)">
+        <member name="M:Api.Controllers.JugadorController.Post(Core.Entities.JugadorEntity)">
             <summary>
-            
+            Modifica un jugador
             </summary>
-            <param name="value"></param>
+            <param name="model">Modelo de la entidad</param>
         </member>
-        <member name="M:Api.Controllers.JugadorController.Put(System.Int32,System.String)">
+        <member name="M:Api.Controllers.JugadorController.Put(Core.Entities.JugadorEntity)">
             <summary>
-            
+            Añade un jugador
             </summary>
-            <param name="id"></param>
-            <param name="value"></param>
+            <param name="model">Modelo de la entidad</param>
         </member>
         <member name="M:Api.Controllers.JugadorController.Delete(System.Int32)">
             <summary>
-            
+            Elimina un jugador mediante su ID
             </summary>
-            <param name="id"></param>
+            <param name="id">ID del jugador</param>
         </member>
     </members>
 </doc>
