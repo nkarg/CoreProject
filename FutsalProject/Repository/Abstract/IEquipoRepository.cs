@@ -6,40 +6,40 @@ using System.Text;
 
 namespace DataRepository.Abstract
 {
-    public interface IJugadorRepository
+    public interface IEquipoRepository
     {
         /// <summary>
-        /// Obtiene un jugador mediante un ID específico
+        /// Obtiene un equipo mediante un ID específico
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Jugador GetByKey(int id);
+        Equipo GetByKey(int id);
 
         /// <summary>
-        /// Obtiene todos los jugadores
+        /// Obtiene todos los equipos
         /// </summary>
         /// <returns></returns>
-        List<Jugador> GetAll();
+        List<Equipo> GetAll();
 
         /// <summary>
-        /// Añade un nuevo jugador
+        /// Añade un nuevo equipo
         /// </summary>
-        /// <param name="jugador"></param>
+        /// <param name="equipo"></param>
         /// <returns></returns>
-        RepositoryResult Add(Jugador jugador);
+        RepositoryResult Add(Equipo equipo);
 
         /// <summary>
-        /// Actualiza un jugador específico
+        /// Actualiza un equipo específico
         /// </summary>
-        /// <param name="jugador"></param>
+        /// <param name="equipo"></param>
         /// <returns></returns>
-        RepositoryResult Update(Jugador jugador);
+        RepositoryResult Update(Equipo equipo);
 
         /// <summary>
-        /// Borra un jugador específico
+        /// Borra un equipo específico
         /// </summary>
-        /// <param name="jugador"></param>
+        /// <param name="equipo"></param>
         /// <returns></returns>
-        RepositoryResult Delete(Jugador jugador);
+        RepositoryResult Delete(Equipo equipo);
     }
 }

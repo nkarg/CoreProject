@@ -88,7 +88,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Add(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador.";
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo Jugador.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 
@@ -117,7 +117,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Update(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo jugador.";
+            result.Message = repResult.ActionResult ? "Jugador añadido con exito." : "Error al añadir un nuevo Jugador.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 
@@ -132,7 +132,7 @@ namespace Core.Concrete
 
             var repResult = _repository.Delete(jg);
             result.ResultOk = repResult.ActionResult;
-            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}.";
+            result.Message = repResult.ActionResult ? "Jugador eliminado con exito." : $"Error al eliminar el Jugador ID: {jg.Id} - {jg.Apellidos}, {jg.Nombres}.";
             result.ErrorCode = repResult.ActionResult ? 200 : 500;
             result.ErrorDescription = repResult.Error?.Message;
 

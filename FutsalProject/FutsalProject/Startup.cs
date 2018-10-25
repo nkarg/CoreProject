@@ -80,6 +80,8 @@ namespace FutsalProject
             services.AddDbContext<DataFutsalContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IJugadorRepository, JugadorRepository>();
             services.AddTransient<IJugadorManager, JugadorManager>();
+            services.AddTransient<IEquipoRepository, EquipoRepository>();
+            services.AddTransient<IEquipoManager, EquipoManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

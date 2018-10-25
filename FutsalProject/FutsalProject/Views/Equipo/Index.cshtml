@@ -19,16 +19,10 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Dni</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>TelefonoEmergencia</th>
-                    <th>FotoUrl</th>
-                    <th>IdPieHabil</th>
+                    <th>NombreLargo</th>
+                    <th>NombreCorto</th>
+                    <th>EscudoUrl</th>
                     <th>FechaAfiliacion</th>
-                    <th>FechaNacimiento</th>
                     <th>Borrado</th>
                 </tr>
             </thead>
@@ -36,16 +30,10 @@
             <tfoot>
                 <tr>
                     <th>Id</th>
-                    <th>Dni</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>TelefonoEmergencia</th>
-                    <th>FotoUrl</th>
-                    <th>IdPieHabil</th>
+                    <th>NombreLargo</th>
+                    <th>NombreCorto</th>
+                    <th>EscudoUrl</th>
                     <th>FechaAfiliacion</th>
-                    <th>FechaNacimiento</th>
                     <th>Borrado</th>
                 </tr>
             </tfoot>
@@ -60,41 +48,19 @@
         $(document).ready(function () {
             var table = $('#example').DataTable({
                 ajax: {
-                    url: '/Jugador/GetJugadores',
+                    url: '/Equipo/GetEquipos',
                     dataSrc: ''
                 },
                 columns: [
                     { data: 'Id' },
-                    { data: 'Dni' },
-                    { data: 'Nombres' },
-                    { data: 'Apellidos' },
-                    { data: 'Direccion' },
-                    { data: 'Telefono' },
-                    { data: 'TelefonoEmergencia' },
+                    { data: 'NombreLargo' },
+                    { data: 'NombreCorto' },
                     {
                         data: function (row, type, set, meta) {
-                            return "Ubicación: " + row.FotoUrl;
-                        }
-                    },
-                    {
-                        data: function (row, type, set, meta) {
-                            var pie = "";
-                            switch (row.IdPieHabil) {
-                                case 2:
-                                    pie = "Izquierdo";
-                                    break;
-                                case 3:
-                                    pie = "Ambidiestro";
-                                    break;
-                                default:
-                                    pie = "Derecho";
-                                    break;
-                            }
-                            return pie;
+                            return "Ubicación: " + row.EscudoUrl;
                         }
                     },
                     { data: 'FechaAfiliacion' },
-                    { data: 'FechaNacimiento' },
                     {
                         data: function (row, type, set, meta) {
                             return `<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="defaultCheck${meta.row}" ${(row.Borrado == true ? "checked" : "")} disabled></div>`;

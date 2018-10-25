@@ -12,9 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\DataDapper\DataDapper.csproj" />
-    <ProjectReference Include="..\Data\Data.csproj" />
-    <ProjectReference Include="..\Repository\DataRepository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
