@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{6AD812B7-B19F-4ADE-9474-2EFD2CC04CE5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDapper", "DataDapper\DataDapper.csproj", "{8A95F66E-D005-4CB3-AE80-D548A49C3571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreDapper", "DataDapper\CoreDapper.csproj", "{8A95F66E-D005-4CB3-AE80-D548A49C3571}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnderTesting", "UnderTesting", "{D92E1C19-537B-43FF-AD50-78CFA3202AFA}"
 EndProject
@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationTesting", "Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTesting", "ProjectTesting\ProjectTesting.csproj", "{271A2746-6A6A-4A3D-B45F-8839B70818B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{F9777AD7-31B3-4749-B98B-0CA4D9D653CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin", "Admin\Admin.csproj", "{F9777AD7-31B3-4749-B98B-0CA4D9D653CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
